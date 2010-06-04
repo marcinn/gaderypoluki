@@ -3,7 +3,7 @@
 ASM = nasm
 ASMFLAGS = -f elf64 -I ../include/
 CC = gcc
-CCFLAGS =
+CCFLAGS = -fno-builtin-strcpy
 objects = translate.o
 asmsources = translate.asm
 csources = main.c
