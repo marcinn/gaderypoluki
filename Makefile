@@ -12,11 +12,7 @@ help:
 	@echo "	 clean - rm compiled/object files"
 
 build: clean
-	$(ASM) gaderytest.asm $(ASMFLAGS)
-	$(LD) $(LDFLAGS) -o bin/gaderytest gaderytest.o
-	rm -f $(objects)
-	@echo
-
+	@make -C src/test/
 clean:
 	rm -f $(objects) 
 	@echo
