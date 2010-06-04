@@ -1,6 +1,6 @@
-%include "include/syscalls.asm"
-%include "include/text.asm"
-%include "include/gaderypoluki.asm"
+%include "asm/syscalls.asm"
+%include "asm/text.asm"
+%include "asm/gaderypoluki.asm"
 
 section .data
 	hello:     db 'Ok, to dziala, jak fabryka chciala!',0 

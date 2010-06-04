@@ -10,7 +10,6 @@ translate:
     ; OUT:
     ; al - error code (0: ok)
 
-
     push rbx
     push rcx
 
@@ -52,16 +51,16 @@ translate:
     dec cl      ; zmniejszenie licznika
     jnz .loopc
 .store:
-    mov [edi], bl   ; zapamietanie znaku zmodyfikowanego
+    mov [rdi], bl   ; zapamietanie znaku zmodyfikowanego
     mov cl, ch      ; reset licznika szyfru
     pop rdx         ; odtworzenie adresu szyfru
-    inc edi         ; kolejny znak ciagu
-    inc esi         ; kolejny znak
+    inc rdi         ; kolejny znak ciagu
+    inc rsi         ; kolejny znak
     jmp .loop
 .exitc:
     pop rdx
-    xor al, al
-    mov [edi], al   ; zapisanie konczacego zera
+    xor rax, rax
+    mov [rdi], al   ; zapisanie konczacego zera
 
 .exit:
     pop rcx
@@ -70,11 +69,11 @@ translate:
 
 gaderypoluki:
     push rdx
-    mov rdx, .gaderypolukicipher
+    mov rdx, gaderypolukicipher
     call translate
     pop rdx
     ret
 
 
 section .data
-    .gaderypolukicipher   db 'gaderypolukiGADERYPOLUKI',0
+    gaderypolukicipher   db 'gaderypolukiGADERYPOLUKI',0

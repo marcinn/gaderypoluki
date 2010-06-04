@@ -1,11 +1,11 @@
 .PHONY: all clean
 
 ASM = nasm
-ASMFLAGS = -f elf64 -I ../
+ASMFLAGS = -f elf64 -I ../include/
 LD = ld
 LDFLAGS = 
-objects := $(wildcard *.o)
-sources := $(wildcard *.asm)
+objects = gaderytest.o
+sources = gaderytest.asm
 
 all: link
 
@@ -19,5 +19,5 @@ compile: clean
 	@echo
 
 clean:
-	rm -f $(objects) 
+	rm -f *.o
 	@echo

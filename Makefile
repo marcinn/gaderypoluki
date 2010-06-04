@@ -13,6 +13,10 @@ help:
 
 build: clean
 	@make -C src/test/
+	@make -C src/gaderypoluki/
+	@make -C src/gaderyfilter/
 clean:
-	rm -f $(objects) 
+	@make -C src/test/ clean
+	@make -C src/gaderypoluki/ clean
+	@make -C src/gaderyfilter/ clean
 	@echo
